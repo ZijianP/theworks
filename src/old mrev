@@ -1,0 +1,14 @@
+IF(AND(NOT(ISBLANK([Case].Contact.Current_Journey__c.Module_13__c)),
+  CONTAINS(UPPER([Case].Contact.Current_Journey__c.Mod_13_Unique_Name__c), "MREV")),
+  12,
+  IF(AND(NOT(ISBLANK([Case].Contact.Current_Journey__c.Module_12__c)),
+    CONTAINS(UPPER([Case].Contact.Current_Journey__c.Mod_12_Unique_Name__c), "MREV")),
+    11,
+    IF(AND(NOT(ISBLANK([Case].Contact.Current_Journey__c.Module_11__c)),
+      CONTAINS(UPPER([Case].Contact.Current_Journey__c.Mod_11_Unique_Name__c), "MREV")),
+      10,
+      IF(AND(NOT(ISBLANK([Case].Contact.Current_Journey__c.Module_10__c)),
+        CONTAINS(UPPER([Case].Contact.Current_Journey__c.Mod_10_Unique_Name__c), "MREV")),
+        9,
+        [Case].Contact.Current_Journey__c.Num_Mods_Generated__c))))
+
